@@ -1,0 +1,57 @@
+version: "3.5"
+services:
+  angular:
+    container_name: angular
+    build: .
+    restart: always
+    command: bash -c "  cd my-app &&
+                        ng add @angular/material@11.2.3 || true &&
+                        ng generate service config || true &&
+                        ng serve --host 0.0.0.0 --port 4200"
+    ports:
+      - "4200:4200"
+    expose:
+      - "4200"
+    volumes:
+      - .:/Angular
+    depends_on:
+      - "postgres"
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    restart: always
+    environment:
+        - POSTGRES_USER=root
+        - POSTGRES_PASSWORD=password
+        - POSTGRES_DB=postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  django:
+    container_name: django
+    build: ./django
+    command: bash -c "  cd app &&
+                        python manage.py makemigrations sistemasexpertos &&
+                        python manage.py migrate sistemasexpertos &&
+                        python manage.py makemigrations &&
+                        python manage.py migrate &&
+                        python manage.py seedsuperuser --username username --password password --noinput --email example@email.com &&
+                        python manage.py drf_create_token username || true &&
+                        python manage.py loaddata seed || true &&
+                        python manage.py runserver 0.0.0.0:81"
+    restart: always
+    volumes:
+      - ./django:/django
+    ports:
+      - "81:81"
+    expose:
+      - "81"
+    depends_on:
+      - "postgres"
+                        # python manage.py check --deploy &&
+                        # python manage.py startapp app &&
+                        # python manage.py collectstatic --noinput || true &&
+
+
+    #

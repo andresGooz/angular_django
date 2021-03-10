@@ -1,0 +1,65 @@
+Rutas:
+localhost:4200
+              aplicación de tickets en angular. Login = username, password
+              Luego entrará al panel visualizador de tickets.
+
+
+localhost:81/admin
+localhost:81/admin/sistemasexpertos/ticket/
+              Aplicación de gestión de tickets en django admin. Login = username, password
+              Luego en el panel se pueden crear usuarios y permitirles ver y editar los tickets.
+              No olvidar que al crear un usuario también hay que crear un token para ese usuario.
+
+APIS
+    post localhost:81/api-token-auth
+    get localhost:81/sistemasexpertos/tickets/? con query con parámetros: id, estado, palabra
+
+ADMIN DJANGO DASHBOARD
+    Ticket: Permite busquedas por id, titulo, descripcion, estado.
+
+OBJETIVO
+    Mostrar lista de Tickets + función crear ticket en django admin + Login
+
+STACK:
+    [X] node 15.11.0 + Angular cli 11.2.3 + Django rest 3.9.3
+    [X] Django 1.11, Python 2.7.9 y PostgreSQL 13
+    [X] Bootstrap 4.3.1 instalado por cdn
+    [X] Se carga automáticamente un superusuario con nombre "username" y password "password"
+TICKET:
+    [X] ID
+    [X] Titulo
+    [X] Descripción
+    [X] Estados (Abierto, Pendiente, En Proceso, Resuelto y Cerrado)
+    [X] Fecha de Creación
+MOSTRAR TICKETS:
+    [X] Usuarios logueados pueden ver tickets pero no editarlos. Login con In-memory storage (ver deuda técnica)
+    [X] En angular component
+    [X] Filtrar por cualquier campo: filtra por ID, Estado y Palabra
+CREAR TICKET:
+    [X] Usuarios con permiso especial para editar tickets: soportado a través del panel de Django admin.
+INTERFAZ:
+    [X] Cada ticket debe mostrar hace cuánto tiempo fue creado
+        + en el panel administrativo.
+        + en el front end con angular.
+        = Implementado con el campo "creado_hace"
+    [X] El administrador de django soporta filtros: Tiene el filtro por el campo "Estado"
+    [X] El administrador de django soporta búsquedas
+
+DEUDA TÉCNICA
+    [] revisar configuración de DEFAULT_PERMISSION_CLASSES
+    [] refactorizar: habilitar archivo .env
+    [] Elegir un método de persistencia para almacenar el token de acceso. Actualmente tiene In-memory storage (malo).
+    [] Buscador de tickets por fecha queda pendiente. Por simplicidad no se implementó.
+
+DISCUSIÓN:
+  Se hace un checklist a partir del documento del desafío técnico.
+  La deuda técnica descrita no es crítica ni tiene relación con el cumplimiento de los objetivos.
+  Finalmente se marcan todas las casillas y algunas veces se incluyen comentarios.
+  Se cumplen con todos los requerimientos esenciales del sitio descrito.
+
+  Se pedía usar bootstrap pero como pedian que fuera funcional más que bonita quise
+  aprovechar para revisar los elementos de material design con angular porque hace
+  tiempo los estaba mirando. No me complica luego adaptarme bien a bootstrap.
+
+CONSULTAS:
+gabriel guzman morales = gab.guz.mo@gmail.com

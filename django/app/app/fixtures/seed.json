@@ -1,0 +1,32 @@
+[
+  {
+    "model": "sistemasexpertos.ticket",
+    "pk": 1,
+    "fields": {
+      "titulo": "Problema de la señora Juanita con el refrigerador",
+      "descripcion": "Le falta gas a la maquina",
+      "estado": "Abierto",
+      "datetime": "2021-03-03 06:00:00.000000"
+    }
+  },
+  {
+    "model": "sistemasexpertos.ticket",
+    "pk": 2,
+    "fields": {
+      "titulo": "Mantenimiento de calefactor de sra María",
+      "descripcion": "Limpieza de quemadores y otros varios",
+      "estado": "Abierto",
+      "datetime": "2021-03-03 06:00:00.000000"
+    }
+  },
+  {
+    "model": "sistemasexpertos.ticket",
+    "pk": 3,
+    "fields": {
+      "titulo": "Carpintería colegio",
+      "descripcion": "De aquí a septiembre tiene que estar pintada la fachada.",
+      "estado": "Pendiente",
+      "datetime": "2021-03-03 06:00:00.000000"
+    }
+  }
+]
