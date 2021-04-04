@@ -1,3 +1,7 @@
+Para levantar el sistema:
+simplemente con el comando "docker-compose up"
+Si falla volver a intentar el mismo comando varias veces hasta que funcione porque hay una deuda técnica en el tiempo de levantamiento entre servicios.
+
 Rutas:
 localhost:4200
               aplicación de tickets en angular. Login = username, password
