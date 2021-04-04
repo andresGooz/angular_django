@@ -1,3 +1,10 @@
+Este proyecto levanta un CRUD django-angular (Proyecto tipo hello world)
+STACK:
+    [X] node 15.11.0 + Angular cli 11.2.3 + Django rest 3.9.3
+    [X] Django 1.11, Python 2.7.9 y PostgreSQL 13
+    [X] Bootstrap 4.3.1 instalado por cdn
+    [X] Se carga automáticamente un superusuario con nombre "username" y password "password"
+
 Para levantar el sistema:
 simplemente con el comando "docker-compose up"
 Si falla volver a intentar el mismo comando varias veces hasta que funcione porque hay una deuda técnica en el tiempo de levantamiento entre servicios.
@@ -24,11 +31,7 @@ ADMIN DJANGO DASHBOARD
 OBJETIVO
     Mostrar lista de Tickets + función crear ticket en django admin + Login
 
-STACK:
-    [X] node 15.11.0 + Angular cli 11.2.3 + Django rest 3.9.3
-    [X] Django 1.11, Python 2.7.9 y PostgreSQL 13
-    [X] Bootstrap 4.3.1 instalado por cdn
-    [X] Se carga automáticamente un superusuario con nombre "username" y password "password"
+
 TICKET:
     [X] ID
     [X] Titulo
